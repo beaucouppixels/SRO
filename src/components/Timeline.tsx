@@ -69,8 +69,8 @@ const events = [
   },
   { 
     year: 'May 18, 2026', 
-    title: 'Petition Reaches 3,900+ Signatures', 
-    description: 'The Change.org petition "Save Bothell High School\'s SRO program with Officer Ware," created by student Brady Minneman on May 11, gathers more than 3,900 signatures.',
+    title: 'Petition Reaches 4,300+ Signatures', 
+    description: 'The Change.org petition "Save Bothell High School\'s SRO program with Officer Ware," created by student Brady Minneman on May 11, gathers more than 4,300 signatures.',
     source: 'Lynnwood Times, FOX 13 Seattle'
   },
 ]

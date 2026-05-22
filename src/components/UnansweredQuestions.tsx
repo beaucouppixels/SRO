@@ -24,7 +24,7 @@ const questions = [
   },
   {
     question: 'Why override the population you represent?',
-    context: 'Students, parents, faculty, the principal, and 3,900+ petition signers all supported the SRO. About 11 students and 20 adults spoke in favor at the May 11 meeting. No one spoke against. The board voted against every constituency that testified.',
+    context: 'Students, parents, faculty, the principal, and 4,300+ petition signers all supported the SRO. About 11 students and 20 adults spoke in favor at the May 11 meeting. No one spoke against. The board voted against every constituency that testified.',
   },
   {
     question: 'How will unarmed campus supervisors respond to armed threats?',
