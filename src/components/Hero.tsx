@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 export function Hero({ onNavigate }: { onNavigate: (tab: string) => void }) {
   return (
-    <section id="main-content" className="pt-28 pb-20 px-4 text-center bg-gradient-to-b from-navy to-slate-bg">
+    <section className="pt-28 pb-20 px-4 text-center bg-gradient-to-b from-navy to-slate-bg">
       <div className="max-w-4xl mx-auto">
         <motion.img
           src={officerWareImg}
@@ -48,10 +48,10 @@ export function Hero({ onNavigate }: { onNavigate: (tab: string) => void }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.5 }}
         >
-          <button onClick={() => onNavigate('data')} className="bg-gold text-navy font-bold px-6 py-3 rounded-lg hover:bg-gold-light transition cursor-pointer">
+          <button onClick={() => onNavigate('data')} className="bg-gold text-navy font-bold px-6 py-3 rounded-lg hover:bg-gold-light transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-navy">
             See the Data
           </button>
-          <button onClick={() => onNavigate('action')} className="border border-gold text-gold font-bold px-6 py-3 rounded-lg hover:bg-gold/10 transition cursor-pointer">
+          <button onClick={() => onNavigate('action')} className="border border-gold text-gold font-bold px-6 py-3 rounded-lg hover:bg-gold/10 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-navy">
             Take Action
           </button>
         </motion.div>

@@ -15,7 +15,7 @@ export function TakeAction() {
 
         {/* Primary CTA - Sign Petition */}
         <div className="bg-gold/10 border-2 border-gold rounded-xl p-8 mb-10 text-center">
-          <Signature className="text-gold mx-auto mb-4" size={40} />
+          <Signature className="text-gold mx-auto mb-4" size={40} aria-hidden="true" />
           <h3 className="text-2xl font-bold mb-3">Sign the Petition</h3>
           <p className="text-slate-300 mb-6 max-w-lg mx-auto">
             Over 4,300 community members have already signed. Add your name to show the board 
@@ -25,9 +25,10 @@ export function TakeAction() {
             href="https://www.change.org/p/save-bothell-high-school-s-sro-program-with-officer-ware"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded-lg hover:bg-gold/90 transition text-lg"
+            className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded-lg hover:bg-gold/90 transition text-lg focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-navy"
           >
-            Sign the Petition <ExternalLink size={20} />
+            Sign the Petition <ExternalLink size={20} aria-hidden="true" />
+            <span className="sr-only">(opens in new tab)</span>
           </a>
           <p className="text-xs text-slate-500 mt-4">
             Change.org petition created by student Brady Minneman on May 11, 2026
@@ -36,7 +37,7 @@ export function TakeAction() {
 
         {/* Secondary Petition - Graduation Speaker */}
         <div className="bg-navy-light border border-gold/30 rounded-xl p-6 mb-10 text-center">
-          <GraduationCap className="text-gold mx-auto mb-3" size={32} />
+          <GraduationCap className="text-gold mx-auto mb-3" size={32} aria-hidden="true" />
           <h3 className="text-xl font-bold mb-2">Make Officer Ware the Graduation Speaker</h3>
           <p className="text-slate-300 mb-4 max-w-lg mx-auto text-sm">
             Students have started a petition to invite Officer Ware as the official commencement speaker 
@@ -46,16 +47,17 @@ export function TakeAction() {
             href="https://www.change.org/p/let-s-make-officer-ware-our-graduation-speaker"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-gold/20 text-gold font-bold px-6 py-3 rounded-lg hover:bg-gold/30 transition"
+            className="inline-flex items-center gap-2 bg-gold/20 text-gold font-bold px-6 py-3 rounded-lg hover:bg-gold/30 transition focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-navy"
           >
-            Sign This Petition <ExternalLink size={16} />
+            Sign This Petition <ExternalLink size={16} aria-hidden="true" />
+            <span className="sr-only">(opens in new tab)</span>
           </a>
         </div>
 
         {/* Action Cards */}
         <div className="grid md:grid-cols-2 gap-6 mb-10">
           <div className="bg-navy-light rounded-xl p-6 border border-white/5">
-            <Mail className="text-gold mb-3" size={24} />
+            <Mail className="text-gold mb-3" size={24} aria-hidden="true" />
             <h3 className="font-bold text-lg mb-3">Contact the Board</h3>
             <p className="text-sm text-slate-400 mb-3">
               Email the board members who voted to remove the SRO. Be respectful but firm.
@@ -77,7 +79,7 @@ export function TakeAction() {
           </div>
 
           <div className="bg-navy-light rounded-xl p-6 border border-white/5">
-            <Calendar className="text-gold mb-3" size={24} />
+            <Calendar className="text-gold mb-3" size={24} aria-hidden="true" />
             <h3 className="font-bold text-lg mb-3">Attend Board Meetings</h3>
             <p className="text-sm text-slate-300 mb-3">
               Show up. Be seen. Public comment periods are your opportunity to speak on record. 
@@ -97,7 +99,7 @@ export function TakeAction() {
           </div>
 
           <div className="bg-navy-light rounded-xl p-6 border border-white/5">
-            <Share2 className="text-gold mb-3" size={24} />
+            <Share2 className="text-gold mb-3" size={24} aria-hidden="true" />
             <h3 className="font-bold text-lg mb-3">Share This Site</h3>
             <p className="text-sm text-slate-300 mb-4">
               Help other parents, students, and community members see the full picture. 
@@ -124,7 +126,7 @@ export function TakeAction() {
           </div>
 
           <div className="bg-navy-light rounded-xl p-6 border border-white/5">
-            <Bell className="text-gold mb-3" size={24} />
+            <Bell className="text-gold mb-3" size={24} aria-hidden="true" />
             <h3 className="font-bold text-lg mb-3">Stay Informed</h3>
             <p className="text-sm text-slate-300 mb-3">
               Follow local news coverage for updates on this story and the community response.
@@ -187,7 +189,7 @@ function ContactForm() {
 
   return (
     <div className="bg-navy-light rounded-xl p-6 border border-white/5">
-      <MessageSquare className="text-gold mb-3" size={24} />
+      <MessageSquare className="text-gold mb-3" size={24} aria-hidden="true" />
       <h3 className="font-bold text-lg mb-2">Contact Us</h3>
       <p className="text-sm text-slate-400 mb-4">
         Have information to share? Questions about the data? Want to help organize? Reach out.
@@ -200,30 +202,36 @@ function ContactForm() {
       ) : (
         <form onSubmit={handleSubmit} className="space-y-3">
           <div>
+            <label htmlFor="contact-name" className="sr-only">Your name</label>
             <input
+              id="contact-name"
               type="text"
               name="name"
               placeholder="Your name"
               required
-              className="w-full px-3 py-2 bg-navy border border-white/10 rounded-lg text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-gold/50"
+              className="w-full px-3 py-2 bg-navy border border-white/10 rounded-lg text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-gold/50 focus:ring-2 focus:ring-gold/20"
             />
           </div>
           <div>
+            <label htmlFor="contact-email" className="sr-only">Your email</label>
             <input
+              id="contact-email"
               type="email"
               name="email"
               placeholder="Your email"
               required
-              className="w-full px-3 py-2 bg-navy border border-white/10 rounded-lg text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-gold/50"
+              className="w-full px-3 py-2 bg-navy border border-white/10 rounded-lg text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-gold/50 focus:ring-2 focus:ring-gold/20"
             />
           </div>
           <div>
+            <label htmlFor="contact-message" className="sr-only">Your message</label>
             <textarea
+              id="contact-message"
               name="message"
               placeholder="Your message"
               rows={3}
               required
-              className="w-full px-3 py-2 bg-navy border border-white/10 rounded-lg text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-gold/50 resize-none"
+              className="w-full px-3 py-2 bg-navy border border-white/10 rounded-lg text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-gold/50 focus:ring-2 focus:ring-gold/20 resize-none"
             />
           </div>
           <button
@@ -232,7 +240,7 @@ function ContactForm() {
             className="inline-flex items-center gap-2 bg-gold/20 text-gold font-medium px-4 py-2 rounded-lg hover:bg-gold/30 transition disabled:opacity-50"
           >
             {status === 'submitting' ? 'Sending...' : (
-              <>Send Message <Send size={14} /></>
+              <>Send Message <Send size={14} aria-hidden="true" /></>
             )}
           </button>
           {status === 'error' && (

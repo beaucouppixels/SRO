@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="h-screen flex flex-col overflow-hidden">
       <TabNav tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
-      <main className="flex-1 overflow-y-auto">
+      <main id="main-content" className="flex-1 overflow-y-auto">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}

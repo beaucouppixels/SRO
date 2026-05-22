@@ -22,6 +22,13 @@ export function TabNav({ tabs, activeTab, onTabChange }: Props) {
 
   return (
     <nav aria-label="Main navigation" className="bg-slate-bg border-b border-white/10 shrink-0">
+      {/* Skip to main content link for keyboard users */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-gold focus:text-navy focus:px-3 focus:py-1 focus:rounded focus:z-50"
+      >
+        Skip to main content
+      </a>
       <div className="px-4 py-2 flex items-center justify-between">
         <span className="font-bold text-gold text-lg shrink-0">Keep Our SRO</span>
         
