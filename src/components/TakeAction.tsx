@@ -1,4 +1,5 @@
-import { ExternalLink, Signature, Mail, Calendar, Share2, Bell, GraduationCap } from 'lucide-react'
+import { ExternalLink, Signature, Mail, Calendar, Share2, Bell, GraduationCap, MessageSquare, Send } from 'lucide-react'
+import { useState } from 'react'
 
 export function TakeAction() {
   return (
@@ -148,7 +149,97 @@ export function TakeAction() {
             </div>
           </div>
         </div>
+
+        {/* Contact Form */}
+        <ContactForm />
       </div>
     </section>
+  )
+}
+
+function ContactForm() {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setStatus('submitting')
+    
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    
+    try {
+      const response = await fetch('https://formspree.io/f/mlgvnlka', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      
+      if (response.ok) {
+        setStatus('success')
+        form.reset()
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  return (
+    <div className="bg-navy-light rounded-xl p-6 border border-white/5">
+      <MessageSquare className="text-gold mb-3" size={24} />
+      <h3 className="font-bold text-lg mb-2">Contact Us</h3>
+      <p className="text-sm text-slate-400 mb-4">
+        Have information to share? Questions about the data? Want to help organize? Reach out.
+      </p>
+      
+      {status === 'success' ? (
+        <div className="bg-green-vote/20 border border-green-vote/50 rounded-lg p-4 text-center">
+          <p className="text-green-vote font-medium">Message sent! We'll get back to you soon.</p>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-3">
+          <div>
+            <input
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+              className="w-full px-3 py-2 bg-navy border border-white/10 rounded-lg text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-gold/50"
+            />
+          </div>
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+              className="w-full px-3 py-2 bg-navy border border-white/10 rounded-lg text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-gold/50"
+            />
+          </div>
+          <div>
+            <textarea
+              name="message"
+              placeholder="Your message"
+              rows={3}
+              required
+              className="w-full px-3 py-2 bg-navy border border-white/10 rounded-lg text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-gold/50 resize-none"
+            />
+          </div>
+          <button
+            type="submit"
+            disabled={status === 'submitting'}
+            className="inline-flex items-center gap-2 bg-gold/20 text-gold font-medium px-4 py-2 rounded-lg hover:bg-gold/30 transition disabled:opacity-50"
+          >
+            {status === 'submitting' ? 'Sending...' : (
+              <>Send Message <Send size={14} /></>
+            )}
+          </button>
+          {status === 'error' && (
+            <p className="text-red-400 text-sm">Something went wrong. Please try again.</p>
+          )}
+        </form>
+      )}
+    </div>
   )
 }

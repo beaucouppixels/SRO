@@ -54,7 +54,7 @@ function App() {
             )}
           </motion.div>
         </AnimatePresence>
-        <Footer />
+        <Footer onNavigate={setActiveTab} />
       </main>
     </div>
   )

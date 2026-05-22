@@ -1,4 +1,8 @@
-export function Footer() {
+interface FooterProps {
+  onNavigate: (tab: string) => void
+}
+
+export function Footer({ onNavigate }: FooterProps) {
   return (
     <footer className="py-10 px-4 border-t border-white/10 text-center">
       <div className="max-w-4xl mx-auto">
@@ -26,6 +30,13 @@ export function Footer() {
           >
             District SRO Evaluation (PDF)
           </a>
+          <span>·</span>
+          <button
+            onClick={() => onNavigate('action')}
+            className="hover:text-gold"
+          >
+            Contact Us
+          </button>
         </div>
       </div>
     </footer>
