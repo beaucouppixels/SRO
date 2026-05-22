@@ -1,3 +1,6 @@
+import { useState } from 'react'
+import { Menu, X } from 'lucide-react'
+
 interface Tab {
   id: string
   label: string
@@ -10,22 +13,64 @@ interface Props {
 }
 
 export function TabNav({ tabs, activeTab, onTabChange }: Props) {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const handleTabChange = (id: string) => {
+    onTabChange(id)
+    setMenuOpen(false)
+  }
+
   return (
-    <nav aria-label="Main navigation" className="bg-slate-bg border-b border-white/10 px-4 py-2 flex items-center gap-1 overflow-x-auto shrink-0">
-      <span className="font-bold text-gold text-lg mr-4 shrink-0">Keep Our SRO</span>
-      {tabs.map((tab) => (
+    <nav aria-label="Main navigation" className="bg-slate-bg border-b border-white/10 shrink-0">
+      <div className="px-4 py-2 flex items-center justify-between">
+        <span className="font-bold text-gold text-lg shrink-0">Keep Our SRO</span>
+        
+        {/* Desktop: show all tabs inline */}
+        <div className="hidden md:flex items-center gap-1">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => handleTabChange(tab.id)}
+              className={`px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap transition ${
+                activeTab === tab.id
+                  ? 'bg-gold/15 text-gold'
+                  : 'text-slate-400 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Mobile: hamburger menu button */}
         <button
-          key={tab.id}
-          onClick={() => onTabChange(tab.id)}
-          className={`px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap transition ${
-            activeTab === tab.id
-              ? 'bg-gold/15 text-gold'
-              : 'text-slate-400 hover:text-white hover:bg-white/5'
-          }`}
+          className="md:hidden text-slate-300 hover:text-gold p-2"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
         >
-          {tab.label}
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      ))}
+      </div>
+
+      {/* Mobile: dropdown menu */}
+      {menuOpen && (
+        <div className="md:hidden border-t border-white/10 bg-slate-bg px-4 py-3 space-y-1">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => handleTabChange(tab.id)}
+              className={`block w-full text-left px-3 py-2 rounded-md text-sm font-medium transition ${
+                activeTab === tab.id
+                  ? 'bg-gold/15 text-gold'
+                  : 'text-slate-300 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      )}
     </nav>
   )
 }
