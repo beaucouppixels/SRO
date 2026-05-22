@@ -17,7 +17,7 @@ const tabs = [
   { id: 'quotes', label: 'In Their Words' },
   { id: 'timeline', label: 'Timeline' },
   { id: 'questions', label: 'Questions' },
-  { id: 'action', label: 'What You Can Do' },
+  { id: 'action', label: 'Take Action' },
 ]
 
 function App() {
@@ -48,8 +48,8 @@ function App() {
             {activeTab === 'questions' && <UnansweredQuestions />}
             {activeTab === 'action' && (
               <>
-                <WhatYouCanDo />
                 <TakeAction />
+                <WhatYouCanDo />
               </>
             )}
           </motion.div>

@@ -1,35 +1,71 @@
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, Signature, Mail, Calendar, Share2, Bell } from 'lucide-react'
 
 export function TakeAction() {
   return (
-    <section id="action" className="py-20 px-4 bg-gradient-to-b from-navy/50 to-slate-bg">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Take Action</h2>
-        <p className="text-slate-400 mb-10 max-w-xl mx-auto">
+    <section id="action" className="py-20 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Take Action Now</h2>
+        <p className="text-center text-slate-300 mb-4 max-w-xl mx-auto">
           The vote is done. The community is not. Here's how you can make your voice heard.
         </p>
-        <div className="grid md:grid-cols-2 gap-6 text-left">
+        <p className="text-center text-xs text-slate-500 mb-10 italic">
+          Two of the four board members who voted to remove the SRO are up for re-election in 2027.
+        </p>
+
+        {/* Primary CTA - Sign Petition */}
+        <div className="bg-gold/10 border-2 border-gold rounded-xl p-8 mb-10 text-center">
+          <Signature className="text-gold mx-auto mb-4" size={40} />
+          <h3 className="text-2xl font-bold mb-3">Sign the Petition</h3>
+          <p className="text-slate-300 mb-6 max-w-lg mx-auto">
+            Over 3,900 community members have already signed. Add your name to show the board 
+            that the community stands with Officer Ware and the SRO program.
+          </p>
+          <a
+            href="https://www.change.org/p/save-bothell-high-school-s-sro-program-with-officer-ware"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded-lg hover:bg-gold/90 transition text-lg"
+          >
+            Sign the Petition <ExternalLink size={20} />
+          </a>
+          <p className="text-xs text-slate-500 mt-4">
+            Change.org petition created by student Brady Minneman on May 11, 2026
+          </p>
+        </div>
+
+        {/* Action Cards */}
+        <div className="grid md:grid-cols-2 gap-6 mb-10">
           <div className="bg-navy-light rounded-xl p-6 border border-white/5">
-            <h3 className="font-bold text-lg mb-3 text-gold">Contact the Board</h3>
-            <ul className="space-y-2 text-sm text-slate-300">
-              <li>• Hân Trần (Vice President)</li>
-              <li>• Carson Sanderson (Director)</li>
-              <li>• Kimberlee Kelly (Director)</li>
-              <li>• Elisabeth Sotak (Director)</li>
+            <Mail className="text-gold mb-3" size={24} />
+            <h3 className="font-bold text-lg mb-3">Contact the Board</h3>
+            <p className="text-sm text-slate-400 mb-3">
+              Email the board members who voted to remove the SRO. Be respectful but firm.
+            </p>
+            <ul className="space-y-2 text-sm text-slate-300 mb-4">
+              <li>• <strong>Hân Trần</strong> - up for re-election 2027</li>
+              <li>• <strong>Elisabeth Sotak</strong> - up for re-election 2027</li>
+              <li>• <strong>Carson Sanderson</strong> - term ends 2029</li>
+              <li>• <strong>Kimberlee Kelly</strong> - term ends 2029</li>
             </ul>
             <a
               href="https://www.nsd.org/our-district/leadership/school-board/meet-the-school-board"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 mt-4 text-gold text-sm hover:underline"
+              className="inline-flex items-center gap-1 text-gold text-sm hover:underline"
             >
-              NSD Board Contact Page <ExternalLink size={14} />
+              Find Contact Info <ExternalLink size={14} />
             </a>
           </div>
+
           <div className="bg-navy-light rounded-xl p-6 border border-white/5">
-            <h3 className="font-bold text-lg mb-3 text-gold">Attend Meetings</h3>
+            <Calendar className="text-gold mb-3" size={24} />
+            <h3 className="font-bold text-lg mb-3">Attend Board Meetings</h3>
             <p className="text-sm text-slate-300 mb-3">
-              Show up at Northshore School Board meetings. Public comment periods are your opportunity to be heard on record.
+              Show up. Be seen. Public comment periods are your opportunity to speak on record. 
+              Bring friends and neighbors.
+            </p>
+            <p className="text-sm text-slate-400 mb-4">
+              The board cannot ignore a room full of constituents meeting after meeting.
             </p>
             <a
               href="https://www.nsd.org/our-district/leadership/school-board/attend-a-school-board-meeting"
@@ -37,18 +73,25 @@ export function TakeAction() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-gold text-sm hover:underline"
             >
-              Meeting Schedule <ExternalLink size={14} />
+              View Meeting Schedule <ExternalLink size={14} />
             </a>
           </div>
+
           <div className="bg-navy-light rounded-xl p-6 border border-white/5">
-            <h3 className="font-bold text-lg mb-3 text-gold">Share This Page</h3>
-            <p className="text-sm text-slate-300 mb-3">
-              Share this information with other parents, students, and community members so they can see the full picture.
+            <Share2 className="text-gold mb-3" size={24} />
+            <h3 className="font-bold text-lg mb-3">Share This Site</h3>
+            <p className="text-sm text-slate-300 mb-4">
+              Help other parents, students, and community members see the full picture. 
+              The data speaks for itself - it just needs to be seen.
             </p>
             <button
               onClick={() => {
                 if (navigator.share) {
-                  navigator.share({ title: 'Keep Our SRO', url: window.location.href })
+                  navigator.share({ 
+                    title: 'Keep Our SRO - Bothell High School', 
+                    text: 'The Northshore School Board voted 4-1 to remove Bothell High\'s SRO despite overwhelming community support. See the data they ignored.',
+                    url: window.location.href 
+                  })
                 } else {
                   navigator.clipboard.writeText(window.location.href)
                   alert('Link copied to clipboard!')
@@ -59,11 +102,31 @@ export function TakeAction() {
               Share or Copy Link <ExternalLink size={14} />
             </button>
           </div>
+
           <div className="bg-navy-light rounded-xl p-6 border border-white/5">
-            <h3 className="font-bold text-lg mb-3 text-gold">Stay Informed</h3>
-            <p className="text-sm text-slate-300">
-              Follow local news coverage from KIRO 7 and KOMO News for updates on this story.
+            <Bell className="text-gold mb-3" size={24} />
+            <h3 className="font-bold text-lg mb-3">Stay Informed</h3>
+            <p className="text-sm text-slate-300 mb-3">
+              Follow local news coverage for updates on this story and the community response.
             </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="https://komonews.com/news/crisis-in-the-classroom"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-gold text-sm hover:underline"
+              >
+                KOMO News <ExternalLink size={14} />
+              </a>
+              <a
+                href="https://www.heraldnet.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-gold text-sm hover:underline"
+              >
+                Everett Herald <ExternalLink size={14} />
+              </a>
+            </div>
           </div>
         </div>
       </div>

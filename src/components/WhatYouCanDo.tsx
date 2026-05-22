@@ -2,13 +2,13 @@ import { Scale, FileText, Megaphone, Vote, Users, AlertTriangle, ExternalLink, C
 
 export function WhatYouCanDo() {
   return (
-    <section id="what-you-can-do" className="py-20 px-4">
+    <section id="strategy" className="py-20 px-4 bg-navy/50">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          It's Not Hopeless - Here's What You Can Do
+          Long-Term Strategy
         </h2>
         <p className="text-center text-slate-400 mb-12 max-w-2xl mx-auto">
-          The vote happened. But accountability doesn't end at the board meeting. Washington law 
+          Accountability doesn't end at the board meeting. Washington law 
           provides multiple paths forward.
         </p>
 
@@ -18,14 +18,14 @@ export function WhatYouCanDo() {
           <p className="text-lg font-semibold text-gold mb-2">The Most Effective Path Forward</p>
           <p className="text-slate-300 max-w-2xl mx-auto">
             Build the narrative. Centralize the evidence. Show the disconnect. Sustain public attention. 
-            Then channel that into the <strong>2027 elections</strong> where two of the four "yes" votes 
-            are on the ballot.
+            Then channel that into the <strong>2027 elections</strong> where two of the four "no" votes 
+            (Trần and Sotak) are on the ballot.
           </p>
         </div>
 
         {/* Alternative Strategies - FIRST */}
         <h3 className="text-2xl font-bold text-center mb-6">
-          Strategies That Often Work Better
+          Strategies That Work
         </h3>
         <p className="text-center text-slate-400 mb-8 max-w-2xl mx-auto text-sm">
           A data-driven transparency campaign may be more effective than a recall attempt. 
@@ -37,19 +37,18 @@ export function WhatYouCanDo() {
           {/* Organize for Elections */}
           <div className="bg-navy-light rounded-xl p-6 border border-white/5">
             <Vote className="text-gold mb-3" size={24} />
-            <h4 className="font-bold text-lg mb-2">Organize for Elections</h4>
+            <h4 className="font-bold text-lg mb-2">Organize for 2027 Elections</h4>
             <p className="text-sm text-slate-400 mb-3">
               School board races are low-turnout and highly influenceable by organized local groups.
             </p>
             <ul className="text-sm text-slate-300 space-y-1">
-              <li>• A coordinated campaign can reshape a board in 1-2 election cycles</li>
-              <li>• Sotak (District 2) - term expires <strong>2027</strong></li>
-              <li>• Tran (District 3) - term expires <strong>2027</strong></li>
-              <li>• Sanderson (District 1) - term expires <strong>2029</strong></li>
-              <li>• Kelly (District 5) - term expires <strong>2029</strong></li>
+              <li>• <strong>Elisabeth Sotak</strong> (District 2) - term expires <strong className="text-gold">2027</strong></li>
+              <li>• <strong>Hân Trần</strong> (District 3) - term expires <strong className="text-gold">2027</strong></li>
+              <li>• Carson Sanderson (District 1) - term expires 2029</li>
+              <li>• Kimberlee Kelly (District 5) - term expires 2029</li>
             </ul>
             <p className="text-xs text-slate-500 mt-3 italic">
-              Two of the four "yes" votes are up in 2027. That's next year.
+              Two of the four votes to remove are up in 2027. That's next year.
             </p>
           </div>
 
@@ -82,7 +81,7 @@ export function WhatYouCanDo() {
             </p>
             <ul className="text-sm text-slate-300 space-y-1">
               <li>• Share this site widely</li>
-              <li>• Write letters to editors (KIRO, KOMO, Seattle Times)</li>
+              <li>• Write letters to editors (KIRO, KOMO, Seattle Times, Herald)</li>
               <li>• Attend every board meeting with cameras</li>
               <li>• Document everything publicly</li>
               <li>• Keep the story in the news cycle</li>
