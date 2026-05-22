@@ -13,6 +13,50 @@ import { FadeIn } from './Animations'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
+// Short labels for mobile display
+const shortLabels = ['Safety', 'Climate', 'Educates', 'Counselor', 'Role Model']
+const fullLabels = ['SRO promotes safety', 'SRO improves climate', 'SRO educates on laws', 'SRO is a good counselor', 'SRO is a positive role model']
+
+// Responsive chart options helper
+const getResponsiveOptions = (maxY = 100) => ({
+  responsive: true,
+  maintainAspectRatio: true,
+  plugins: {
+    legend: {
+      labels: {
+        color: '#94a3b8',
+        boxWidth: 12,
+        padding: 8,
+        font: { size: 11 },
+      },
+    },
+  },
+  scales: {
+    y: {
+      beginAtZero: true,
+      max: maxY,
+      ticks: { color: '#94a3b8', font: { size: 11 } },
+      grid: { color: '#ffffff10' },
+    },
+    x: {
+      ticks: {
+        color: '#94a3b8',
+        font: { size: 10 },
+        maxRotation: 45,
+        minRotation: 0,
+        callback: function (value: string | number, index: number) {
+          // Use short labels on small screens
+          if (typeof window !== 'undefined' && window.innerWidth < 640) {
+            return shortLabels[index] || value
+          }
+          return fullLabels[index] || value
+        },
+      },
+      grid: { color: '#ffffff10' },
+    },
+  },
+})
+
 const stakeholders = [
   { group: 'Students (survey 2024, N=786; survey 2026, N=235)', supported: true },
   { group: 'Parents (survey, N=447)', supported: true },
@@ -29,7 +73,7 @@ const stakeholders = [
 // Table 1: Frequency of Student Responses (May 2024, N=786)
 // From Craig Foster PhD Annual Review - combining Agree + Strongly Agree
 const surveyData = {
-  labels: ['SRO promotes safety', 'SRO improves climate', 'SRO educates on laws', 'SRO is a good counselor', 'SRO is a positive role model'],
+  labels: shortLabels,
   datasets: [
     {
       label: 'Agree + Strongly Agree (%)',
@@ -54,7 +98,7 @@ const surveyData = {
 
 // Parents (N=447) - Agree + Strongly Agree for each item
 const parentStaffData = {
-  labels: ['SRO promotes safety', 'SRO improves climate', 'SRO educates on laws', 'SRO is a good counselor', 'SRO is a positive role model'],
+  labels: shortLabels,
   datasets: [
     {
       label: 'Parents (N=447) - Agree + Strongly Agree (%)',
@@ -72,8 +116,10 @@ const parentStaffData = {
 }
 
 // Table 3: By ethnicity - "Agree" + "Strongly Agree" for Safety (N=786 students)
+const demographicLabelsShort = ['Asian', 'Black', 'Hispanic', 'White', 'Two+']
+const demographicLabelsFull = ['Asian (N=122)', 'Black (N=31)', 'Hispanic/Latino (N=76)', 'White (N=422)', 'Two or More (N=98)']
 const demographicData = {
-  labels: ['Asian (N=122)', 'Black (N=31)', 'Hispanic/Latino (N=76)', 'White (N=422)', 'Two or More (N=98)'],
+  labels: demographicLabelsShort,
   datasets: [
     {
       label: 'Agree + Strongly Agree: SRO Promotes Safety (%)',
@@ -154,16 +200,7 @@ export function DataIgnored() {
           </p>
           <Bar
             data={surveyData}
-            options={{
-              responsive: true,
-              plugins: {
-                legend: { labels: { color: '#94a3b8' } },
-              },
-              scales: {
-                y: { beginAtZero: true, max: 100, ticks: { color: '#94a3b8' }, grid: { color: '#ffffff10' } },
-                x: { ticks: { color: '#94a3b8' }, grid: { color: '#ffffff10' } },
-              },
-            }}
+            options={getResponsiveOptions(100)}
           />
         </div>
 
@@ -176,16 +213,7 @@ export function DataIgnored() {
           </p>
           <Bar
             data={parentStaffData}
-            options={{
-              responsive: true,
-              plugins: {
-                legend: { labels: { color: '#94a3b8' } },
-              },
-              scales: {
-                y: { beginAtZero: true, max: 100, ticks: { color: '#94a3b8' }, grid: { color: '#ffffff10' } },
-                x: { ticks: { color: '#94a3b8' }, grid: { color: '#ffffff10' } },
-              },
-            }}
+            options={getResponsiveOptions(100)}
           />
         </div>
 
@@ -199,12 +227,38 @@ export function DataIgnored() {
             data={demographicData}
             options={{
               responsive: true,
+              maintainAspectRatio: true,
               plugins: {
-                legend: { labels: { color: '#94a3b8' } },
+                legend: {
+                  labels: {
+                    color: '#94a3b8',
+                    boxWidth: 12,
+                    padding: 8,
+                    font: { size: 11 },
+                  },
+                },
+                tooltip: {
+                  callbacks: {
+                    title: (items) => demographicLabelsFull[items[0].dataIndex] || items[0].label,
+                  },
+                },
               },
               scales: {
-                y: { beginAtZero: true, max: 100, ticks: { color: '#94a3b8' }, grid: { color: '#ffffff10' } },
-                x: { ticks: { color: '#94a3b8' }, grid: { color: '#ffffff10' } },
+                y: {
+                  beginAtZero: true,
+                  max: 100,
+                  ticks: { color: '#94a3b8', font: { size: 11 } },
+                  grid: { color: '#ffffff10' },
+                },
+                x: {
+                  ticks: {
+                    color: '#94a3b8',
+                    font: { size: 10 },
+                    maxRotation: 0,
+                    minRotation: 0,
+                  },
+                  grid: { color: '#ffffff10' },
+                },
               },
             }}
           />
