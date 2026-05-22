@@ -1,4 +1,4 @@
-import { ExternalLink, Signature, Mail, Calendar, Share2, Bell } from 'lucide-react'
+import { ExternalLink, Signature, Mail, Calendar, Share2, Bell, GraduationCap } from 'lucide-react'
 
 export function TakeAction() {
   return (
@@ -31,6 +31,24 @@ export function TakeAction() {
           <p className="text-xs text-slate-500 mt-4">
             Change.org petition created by student Brady Minneman on May 11, 2026
           </p>
+        </div>
+
+        {/* Secondary Petition - Graduation Speaker */}
+        <div className="bg-navy-light border border-gold/30 rounded-xl p-6 mb-10 text-center">
+          <GraduationCap className="text-gold mx-auto mb-3" size={32} />
+          <h3 className="text-xl font-bold mb-2">Make Officer Ware the Graduation Speaker</h3>
+          <p className="text-slate-300 mb-4 max-w-lg mx-auto text-sm">
+            Students have started a petition to invite Officer Ware as the official commencement speaker 
+            for the Class of 2026 - and to uninvite the four board members who voted to remove him.
+          </p>
+          <a
+            href="https://www.change.org/p/let-s-make-officer-ware-our-graduation-speaker"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-gold/20 text-gold font-bold px-6 py-3 rounded-lg hover:bg-gold/30 transition"
+          >
+            Sign This Petition <ExternalLink size={16} />
+          </a>
         </div>
 
         {/* Action Cards */}

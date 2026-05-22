@@ -1,4 +1,4 @@
-import { HelpCircle, Info } from 'lucide-react'
+import { HelpCircle, Info, Scale } from 'lucide-react'
 
 // What we now know (verified from HeraldNet, May 12, 2026)
 const knownFacts = {
@@ -86,6 +86,48 @@ export function UnansweredQuestions() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Legal Context Section */}
+        <div className="mt-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+            Legal Context
+          </h2>
+          <p className="text-center text-slate-300 mb-8 max-w-2xl mx-auto">
+            Washington State law requires annual review of SRO programs - but NSD's interpretation is unusual.
+          </p>
+          <div className="bg-navy-light rounded-xl p-6 border border-white/5">
+            <div className="flex items-start gap-3 mb-4">
+              <Scale className="text-gold shrink-0 mt-1" size={22} />
+              <h3 className="font-bold text-lg">What the law actually says:</h3>
+            </div>
+            <ul className="space-y-3 text-slate-300 ml-9">
+              <li className="flex items-baseline gap-2">
+                <span className="text-gold shrink-0">•</span>
+                <span>
+                  <a href="https://app.leg.wa.gov/rcw/default.aspx?cite=28A.320.124" target="_blank" rel="noopener noreferrer" className="text-gold underline">RCW 28A.320.124</a> requires school boards to annually review SRO programs and collect community input.
+                </span>
+              </li>
+              <li className="flex items-baseline gap-2">
+                <span className="text-gold shrink-0">•</span>
+                <span>
+                  The <a href="https://lawfilesext.leg.wa.gov/biennium/2021-22/Pdf/Bill%20Reports/House/1214-S.E%20HBR%20PL%2021.pdf" target="_blank" rel="noopener noreferrer" className="text-gold underline">House Bill 1214</a> established these review requirements statewide.
+                </span>
+              </li>
+              <li className="flex items-baseline gap-2">
+                <span className="text-gold shrink-0">•</span>
+                <span>
+                  <strong>However:</strong> No other district in Washington interprets this law as requiring an annual vote to continue the program. Most districts treat positive survey results as sufficient to continue.
+                </span>
+              </li>
+              <li className="flex items-baseline gap-2">
+                <span className="text-gold shrink-0">•</span>
+                <span>
+                  Every year since 2022, the Bothell community has had to rally supporters to attend board meetings - a process advocates describe as "not normal" compared to other districts.
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
