@@ -55,9 +55,9 @@ export function UnansweredQuestions() {
             </div>
             <ul className="space-y-3 text-slate-300 ml-9">
               {knownFacts.details.map((detail, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="text-gold mt-1 shrink-0">•</span>
-                  <span className="text-sm">{detail}</span>
+                <li key={i} className="flex items-baseline gap-2">
+                  <span className="text-gold shrink-0">•</span>
+                  <span>{detail}</span>
                 </li>
               ))}
             </ul>

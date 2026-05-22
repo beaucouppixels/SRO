@@ -86,14 +86,15 @@ export function TakeAction() {
             </p>
             <button
               onClick={() => {
+                const shareUrl = 'https://bit.ly/49byjOm'
                 if (navigator.share) {
                   navigator.share({ 
                     title: 'Keep Our SRO - Bothell High School', 
                     text: 'The Northshore School Board voted 4-1 to remove Bothell High\'s SRO despite overwhelming community support. See the data they ignored.',
-                    url: window.location.href 
+                    url: shareUrl 
                   })
                 } else {
-                  navigator.clipboard.writeText(window.location.href)
+                  navigator.clipboard.writeText(shareUrl)
                   alert('Link copied to clipboard!')
                 }
               }}
