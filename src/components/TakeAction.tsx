@@ -4,7 +4,7 @@ export function TakeAction() {
   return (
     <section id="action" className="py-20 px-4 bg-gradient-to-b from-navy/50 to-slate-bg">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">🎯 Take Action</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Take Action</h2>
         <p className="text-slate-400 mb-10 max-w-xl mx-auto">
           The vote is done. The community is not. Here's how you can make your voice heard.
         </p>
@@ -18,7 +18,7 @@ export function TakeAction() {
               <li>• Elisabeth Sotak (Director)</li>
             </ul>
             <a
-              href="https://www.nsd.org/school-board"
+              href="https://www.nsd.org/our-district/leadership/school-board/meet-the-school-board"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 mt-4 text-gold text-sm hover:underline"
@@ -32,7 +32,7 @@ export function TakeAction() {
               Show up at Northshore School Board meetings. Public comment periods are your opportunity to be heard on record.
             </p>
             <a
-              href="https://www.nsd.org/school-board/board-meetings"
+              href="https://www.nsd.org/our-district/leadership/school-board/attend-a-school-board-meeting"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-gold text-sm hover:underline"
@@ -42,9 +42,22 @@ export function TakeAction() {
           </div>
           <div className="bg-navy-light rounded-xl p-6 border border-white/5">
             <h3 className="font-bold text-lg mb-3 text-gold">Share This Page</h3>
-            <p className="text-sm text-slate-300">
+            <p className="text-sm text-slate-300 mb-3">
               Share this information with other parents, students, and community members so they can see the full picture.
             </p>
+            <button
+              onClick={() => {
+                if (navigator.share) {
+                  navigator.share({ title: 'Keep Our SRO', url: window.location.href })
+                } else {
+                  navigator.clipboard.writeText(window.location.href)
+                  alert('Link copied to clipboard!')
+                }
+              }}
+              className="inline-flex items-center gap-1 text-gold text-sm hover:underline cursor-pointer"
+            >
+              Share or Copy Link <ExternalLink size={14} />
+            </button>
           </div>
           <div className="bg-navy-light rounded-xl p-6 border border-white/5">
             <h3 className="font-bold text-lg mb-3 text-gold">Stay Informed</h3>

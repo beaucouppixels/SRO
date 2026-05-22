@@ -7,7 +7,7 @@ const questions = [
   },
   {
     question: 'Why override your own evaluation?',
-    context: 'The district\'s 2025-26 SRO Program Evaluation — their own internal review — recommended continuing the program.',
+    context: 'The district\'s 2025-26 SRO Program Evaluation - their own internal review - recommended continuing the program.',
   },
   {
     question: 'Where is the evidence for "psychological safety concerns"?',
@@ -28,9 +28,9 @@ export function UnansweredQuestions() {
     <section id="questions" className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          ❓ Unanswered Questions
+          Unanswered Questions
         </h2>
-        <p className="text-center text-slate-400 mb-2 max-w-2xl mx-auto">
+        <p className="text-center text-slate-300 mb-2 max-w-2xl mx-auto">
           Questions the board has not answered publicly.
         </p>
         <p className="text-center text-xs text-slate-500 mb-12 italic">
