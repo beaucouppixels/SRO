@@ -12,11 +12,112 @@ export function WhatYouCanDo() {
           provides multiple paths forward.
         </p>
 
-        {/* Recall Section */}
-        <div className="bg-navy-light rounded-xl p-8 border border-white/5 mb-10">
+        {/* Key Insight - up top */}
+        <div className="mb-10 bg-gold/10 border border-gold/30 rounded-xl p-6 text-center">
+          <CheckCircle className="text-gold mx-auto mb-3" size={28} />
+          <p className="text-lg font-semibold text-gold mb-2">The Most Effective Path Forward</p>
+          <p className="text-slate-300 max-w-2xl mx-auto">
+            Build the narrative. Centralize the evidence. Show the disconnect. Sustain public attention. 
+            Then channel that into the <strong>2027 elections</strong> where two of the four "yes" votes 
+            are on the ballot.
+          </p>
+        </div>
+
+        {/* Alternative Strategies - FIRST */}
+        <h3 className="text-2xl font-bold text-center mb-6">
+          Strategies That Often Work Better
+        </h3>
+        <p className="text-center text-slate-400 mb-8 max-w-2xl mx-auto text-sm">
+          A data-driven transparency campaign may be more effective than a recall attempt. 
+          The San Francisco school board recalls succeeded because organizers built a narrative, 
+          centralized evidence, showed disconnect from community priorities, and sustained attention for months.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          {/* Organize for Elections */}
+          <div className="bg-navy-light rounded-xl p-6 border border-white/5">
+            <Vote className="text-gold mb-3" size={24} />
+            <h4 className="font-bold text-lg mb-2">Organize for Elections</h4>
+            <p className="text-sm text-slate-400 mb-3">
+              School board races are low-turnout and highly influenceable by organized local groups.
+            </p>
+            <ul className="text-sm text-slate-300 space-y-1">
+              <li>• A coordinated campaign can reshape a board in 1-2 election cycles</li>
+              <li>• Sotak (District 2) - term expires <strong>2027</strong></li>
+              <li>• Tran (District 3) - term expires <strong>2027</strong></li>
+              <li>• Sanderson (District 1) - term expires <strong>2029</strong></li>
+              <li>• Kelly (District 5) - term expires <strong>2029</strong></li>
+            </ul>
+            <p className="text-xs text-slate-500 mt-3 italic">
+              Two of the four "yes" votes are up in 2027. That's next year.
+            </p>
+          </div>
+
+          {/* Public Records Requests */}
+          <div className="bg-navy-light rounded-xl p-6 border border-white/5">
+            <FileText className="text-gold mb-3" size={24} />
+            <h4 className="font-bold text-lg mb-2">Public Records Requests</h4>
+            <p className="text-sm text-slate-400 mb-3">
+              Washington's Public Records Act gives you the right to request government documents. Look for:
+            </p>
+            <ul className="text-sm text-slate-300 space-y-1">
+              <li>• Internal emails about the SRO decision</li>
+              <li>• Survey data discussions</li>
+              <li>• Safety data and incident reports</li>
+              <li>• Communications with advocacy groups</li>
+              <li>• Communications with district counsel</li>
+              <li>• Communications with city officials/police</li>
+            </ul>
+            <p className="text-xs text-slate-500 mt-3 italic">
+              This can uncover procedural or transparency problems that strengthen other efforts.
+            </p>
+          </div>
+
+          {/* Media Pressure */}
+          <div className="bg-navy-light rounded-xl p-6 border border-white/5">
+            <Megaphone className="text-gold mb-3" size={24} />
+            <h4 className="font-bold text-lg mb-2">Sustained Media Pressure</h4>
+            <p className="text-sm text-slate-400 mb-3">
+              You already have public sentiment, anecdotal evidence, and news coverage. Keep building:
+            </p>
+            <ul className="text-sm text-slate-300 space-y-1">
+              <li>• Share this site widely</li>
+              <li>• Write letters to editors (KIRO, KOMO, Seattle Times)</li>
+              <li>• Attend every board meeting with cameras</li>
+              <li>• Document everything publicly</li>
+              <li>• Keep the story in the news cycle</li>
+            </ul>
+          </div>
+
+          {/* No Confidence / OPMA */}
+          <div className="bg-navy-light rounded-xl p-6 border border-white/5">
+            <Users className="text-gold mb-3" size={24} />
+            <h4 className="font-bold text-lg mb-2">Political Pressure Campaigns</h4>
+            <p className="text-sm text-slate-400 mb-3">
+              While not legally binding, these create significant political pressure:
+            </p>
+            <ul className="text-sm text-slate-300 space-y-1">
+              <li>• Parent association "no confidence" votes</li>
+              <li>• Teacher union resolutions</li>
+              <li>• Student government statements</li>
+              <li>• City council statements</li>
+              <li>• Community referendums</li>
+            </ul>
+            <div className="mt-4 pt-3 border-t border-white/10">
+              <p className="text-sm font-semibold text-amber-300 mb-1">OPMA Complaints</p>
+              <p className="text-xs text-slate-400">
+                If decisions were coordinated privately outside legal meetings, that's an 
+                Open Public Meetings Act violation - a serious legal matter in Washington.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Recall Section - LAST */}
+        <div className="bg-navy-light rounded-xl p-8 border border-white/5">
           <div className="flex items-center gap-3 mb-6">
             <Scale className="text-gold" size={28} />
-            <h3 className="text-2xl font-bold">Path 1: Recall Election</h3>
+            <h3 className="text-2xl font-bold">The Harder Path: Recall Election</h3>
           </div>
           <p className="text-slate-300 mb-6">
             In Washington, the primary legal mechanism to remove an elected school board member 
@@ -56,7 +157,6 @@ export function WhatYouCanDo() {
             </li>
           </ul>
 
-          {/* Recall Steps */}
           <h4 className="font-bold text-lg text-gold mb-4">How a School Board Recall Works in WA:</h4>
           <div className="space-y-4 mb-6">
             <div className="flex gap-4">
@@ -100,107 +200,6 @@ export function WhatYouCanDo() {
               Ballotpedia: WA Recall Laws <ExternalLink size={12} />
             </a>
           </div>
-        </div>
-
-        {/* Alternative Strategies */}
-        <h3 className="text-2xl font-bold text-center mb-6">
-          Strategies That Often Work Better
-        </h3>
-        <p className="text-center text-slate-400 mb-8 max-w-2xl mx-auto text-sm">
-          A data-driven transparency campaign may be more effective than a recall attempt. 
-          The San Francisco school board recalls succeeded because organizers built a narrative, 
-          centralized evidence, showed disconnect from community priorities, and sustained attention for months.
-        </p>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Public Records Requests */}
-          <div className="bg-navy-light rounded-xl p-6 border border-white/5">
-            <FileText className="text-gold mb-3" size={24} />
-            <h4 className="font-bold text-lg mb-2">Public Records Requests</h4>
-            <p className="text-sm text-slate-400 mb-3">
-              Washington's Public Records Act gives you the right to request government documents. Look for:
-            </p>
-            <ul className="text-sm text-slate-300 space-y-1">
-              <li>• Internal emails about the SRO decision</li>
-              <li>• Survey data discussions</li>
-              <li>• Safety data and incident reports</li>
-              <li>• Communications with advocacy groups</li>
-              <li>• Communications with district counsel</li>
-              <li>• Communications with city officials/police</li>
-            </ul>
-            <p className="text-xs text-slate-500 mt-3 italic">
-              This can uncover procedural or transparency problems that strengthen other efforts.
-            </p>
-          </div>
-
-          {/* Media Pressure */}
-          <div className="bg-navy-light rounded-xl p-6 border border-white/5">
-            <Megaphone className="text-gold mb-3" size={24} />
-            <h4 className="font-bold text-lg mb-2">Sustained Media Pressure</h4>
-            <p className="text-sm text-slate-400 mb-3">
-              You already have public sentiment, anecdotal evidence, and news coverage. Keep building:
-            </p>
-            <ul className="text-sm text-slate-300 space-y-1">
-              <li>• Share this site widely</li>
-              <li>• Write letters to editors (KIRO, KOMO, Seattle Times)</li>
-              <li>• Attend every board meeting with cameras</li>
-              <li>• Document everything publicly</li>
-              <li>• Keep the story in the news cycle</li>
-            </ul>
-          </div>
-
-          {/* Organize for Elections */}
-          <div className="bg-navy-light rounded-xl p-6 border border-white/5">
-            <Vote className="text-gold mb-3" size={24} />
-            <h4 className="font-bold text-lg mb-2">Organize for Elections</h4>
-            <p className="text-sm text-slate-400 mb-3">
-              School board races are low-turnout and highly influenceable by organized local groups.
-            </p>
-            <ul className="text-sm text-slate-300 space-y-1">
-              <li>• A coordinated campaign can reshape a board in 1–2 election cycles</li>
-              <li>• Sotak (District 2) - term expires <strong>2027</strong></li>
-              <li>• Trần (District 3) - term expires <strong>2027</strong></li>
-              <li>• Sanderson (District 1) - term expires <strong>2029</strong></li>
-              <li>• Kelly (District 5) - term expires <strong>2029</strong></li>
-            </ul>
-            <p className="text-xs text-slate-500 mt-3 italic">
-              Two of the four "yes" votes are up in 2027. That's next year.
-            </p>
-          </div>
-
-          {/* No Confidence / OPMA */}
-          <div className="bg-navy-light rounded-xl p-6 border border-white/5">
-            <Users className="text-gold mb-3" size={24} />
-            <h4 className="font-bold text-lg mb-2">Political Pressure Campaigns</h4>
-            <p className="text-sm text-slate-400 mb-3">
-              While not legally binding, these create significant political pressure:
-            </p>
-            <ul className="text-sm text-slate-300 space-y-1">
-              <li>• Parent association "no confidence" votes</li>
-              <li>• Teacher union resolutions</li>
-              <li>• Student government statements</li>
-              <li>• City council statements</li>
-              <li>• Community referendums</li>
-            </ul>
-            <div className="mt-4 pt-3 border-t border-white/10">
-              <p className="text-sm font-semibold text-amber-300 mb-1">OPMA Complaints</p>
-              <p className="text-xs text-slate-400">
-                If decisions were coordinated privately outside legal meetings, that's an 
-                Open Public Meetings Act violation - a serious legal matter in Washington.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Key Insight */}
-        <div className="mt-10 bg-gold/10 border border-gold/30 rounded-xl p-6 text-center">
-          <CheckCircle className="text-gold mx-auto mb-3" size={28} />
-          <p className="text-lg font-semibold text-gold mb-2">The Most Effective Path Forward</p>
-          <p className="text-slate-300 max-w-2xl mx-auto">
-            Build the narrative. Centralize the evidence. Show the disconnect. Sustain public attention. 
-            Then channel that into the <strong>2027 elections</strong> where two of the four "yes" votes 
-            are on the ballot.
-          </p>
         </div>
       </div>
     </section>
