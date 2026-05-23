@@ -3,7 +3,7 @@ import { Quote } from 'lucide-react'
 const quotes = [
   // Student quotes from May 11, 2026 board meeting
   {
-    text: "Officer Wear didn't just help me adjust to a new school. He changed my entire perspective. He helped turn a place that once felt intimidating and unfamiliar into somewhere I could actually feel comfortable in.",
+    text: "Officer Ware didn't just help me adjust to a new school. He changed my entire perspective. He helped turn a place that once felt intimidating and unfamiliar into somewhere I could actually feel comfortable in.",
     author: 'Ariana Bonita',
     role: 'Bothell High Junior',
     source: 'Board meeting, May 11, 2026',
@@ -15,7 +15,7 @@ const quotes = [
     source: 'Board meeting, May 11, 2026',
   },
   {
-    text: "I think it's unfair that you are claiming that we feel uncomfortable. As not only a Latino student on campus but as a woman on campus, I know Officer Wear is going to be there for me no matter what.",
+    text: "I think it's unfair that you are claiming that we feel uncomfortable. As not only a Latino student on campus but as a woman on campus, I know Officer Ware is going to be there for me no matter what.",
     author: 'Valyrian Nava',
     role: 'Bothell High Junior',
     source: 'Board meeting, May 11, 2026',
@@ -39,7 +39,7 @@ const quotes = [
     source: 'Board meeting, May 11, 2026 (translated from Spanish)',
   },
   {
-    text: "Two weeks ago, roughly 11 students positively spoke on behalf of Officer Wear. In total, 85 people have spoken since March 2022. 30+ students, 25+ staff members, 20+ parents, and 10+ community members. Yet still, you try and take our SRO program.",
+    text: "Two weeks ago, roughly 11 students positively spoke on behalf of Officer Ware. In total, 85 people have spoken since March 2022. 30+ students, 25+ staff members, 20+ parents, and 10+ community members. Yet still, you try and take our SRO program.",
     author: 'Ray Harless',
     role: 'Bothell High Sophomore',
     source: 'Board meeting, May 11, 2026',
@@ -51,7 +51,7 @@ const quotes = [
     source: 'Board meeting, May 11, 2026',
   },
   {
-    text: "Please don't assume that because you don't see us in many of your meetings is because we don't care. We're here to keep Officer Wear at Bothell High School. He is more than a necessity. The Hispanic community is supporting him very much.",
+    text: "Please don't assume that because you don't see us in many of your meetings is because we don't care. We're here to keep Officer Ware at Bothell High School. He is more than a necessity. The Hispanic community is supporting him very much.",
     author: 'Martha Flores',
     role: 'Parent, Hispanic Community Representative',
     source: 'Board meeting, May 11, 2026',
