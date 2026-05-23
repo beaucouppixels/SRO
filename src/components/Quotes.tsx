@@ -84,8 +84,8 @@ const quotes = [
   // Board member quote
   {
     text: "I'm not able to support renewal of this contract because this district owes our community something more comprehensive and equitable and more empowering to all community members.",
-    author: 'Han Tran',
-    role: 'Board Vice President (voted to remove)',
+    author: 'Hân Trần',
+    role: 'Board Legislative Rep (voted to remove)',
     source: 'KIRO 7',
     isBoard: true,
   },

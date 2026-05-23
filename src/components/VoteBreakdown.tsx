@@ -8,10 +8,10 @@ import elisabethImg from '../assets/board/elisabeth-sotak.jpg'
 
 const boardMembers = [
   { name: 'Sandy Hayes', position: 'President', vote: 'keep', label: 'Yes (Approve SRO)', photo: sandyImg, email: 'sbdistrict4@nsd.org' },
-  { name: 'Hân Trần', position: 'Vice President', vote: 'remove', label: 'No (End program)', photo: hanImg, email: 'sbdistrict3@nsd.org' },
+  { name: 'Hân Trần', position: 'Legislative Rep', vote: 'remove', label: 'No (End program)', photo: hanImg, email: 'sbdistrict3@nsd.org' },
   { name: 'Carson Sanderson', position: 'Director', vote: 'remove', label: 'No (End program)', photo: carsonImg, email: 'sbdistrict1@nsd.org' },
   { name: 'Kimberlee Kelly', position: 'Director', vote: 'remove', label: 'No (End program)', photo: kimberleeImg, email: 'sbdistrict5@nsd.org' },
-  { name: 'Elisabeth Sotak', position: 'Director', vote: 'remove', label: 'No (End program)', photo: elisabethImg, email: 'sbdistrict2@nsd.org' },
+  { name: 'Elisabeth Sotak', position: 'Vice President', vote: 'remove', label: 'No (End program)', photo: elisabethImg, email: 'sbdistrict2@nsd.org' },
 ]
 
 export function VoteBreakdown() {
