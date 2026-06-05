@@ -18,7 +18,7 @@ export function TakeAction() {
           <Signature className="text-gold mx-auto mb-4" size={40} aria-hidden="true" />
           <h3 className="text-2xl font-bold mb-3">Sign the Petition</h3>
           <p className="text-slate-300 mb-6 max-w-lg mx-auto">
-            Over 4,300 community members have already signed. Add your name to show the board 
+            Over 4,800 community members have already signed. Add your name to show the board 
             that the community stands with Officer Ware and the SRO program.
           </p>
           <a

@@ -65,7 +65,7 @@ const stakeholders = [
   { group: 'Principal Jensen (zero complaints received)', supported: true },
   { group: 'NSD Director of Research (Craig Foster, PhD)', supported: true },
   { group: 'Student Wellness & Safety Task Force (2022-23)', supported: true },
-  { group: 'Community Petition (4,300+)', supported: true },
+  { group: 'Community Petition (4,800+)', supported: true },
   { group: '100+ public commenters since 2022', supported: true },
   { group: 'School Board (4 of 5 members)', supported: false },
 ]
@@ -167,7 +167,7 @@ export function DataIgnored() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           <FadeIn delay={0}>
             <div className="bg-navy-light rounded-xl p-5 text-center h-full flex flex-col justify-center">
-              <p className="text-3xl font-extrabold text-gold">4,300+</p>
+              <p className="text-3xl font-extrabold text-gold">4,800+</p>
               <p className="text-slate-400 mt-1 text-sm">Petition signatures</p>
             </div>
           </FadeIn>

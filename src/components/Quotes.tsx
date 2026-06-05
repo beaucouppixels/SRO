@@ -78,7 +78,7 @@ const quotes = [
   {
     text: "They're not representing the community.",
     author: 'Brady Minneman',
-    role: 'Bothell High Senior, petition organizer (4,300+ signatures)',
+    role: 'Bothell High Senior, petition organizer (4,800+ signatures)',
     source: 'KIRO 7',
   },
   // Board member quote

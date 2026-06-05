@@ -40,7 +40,7 @@ export function Hero({ onNavigate }: { onNavigate: (tab: string) => void }) {
         >
           The Northshore School Board voted 4-1 to remove Bothell High's School Resource Officer - 
           against the recommendation of their own evaluation, the principal, the faculty, the parents, 
-          and 4,300+ community members who signed a petition to keep him. The position costs the district nothing - it's federally grant-funded.
+          and 4,800+ community members who signed a petition to keep him. The position costs the district nothing - it's federally grant-funded.
         </motion.p>
         <motion.div
           className="flex justify-center gap-4 flex-wrap"
